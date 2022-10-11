@@ -1,2 +1,2 @@
 require("ts-node/register");
-require("./main");
+require("./server");
