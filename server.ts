@@ -3,7 +3,7 @@ import path from "path";
 let app = express();
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve("./index.html"));
+  res.sendFile(path.resolve("/"));
 });
 
 app.use(express.static("css"));
