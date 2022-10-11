@@ -1,6 +1,7 @@
+node_modules
 firstVer
 present
 copy.js
 rules.rtf
 readme.txt
-node_modules
+package-lock.json
