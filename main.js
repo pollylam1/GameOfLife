@@ -1,2 +1,2 @@
 require("ts-node/register");
-requestAnimationFrame("./main");
+require("./main");
