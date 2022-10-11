@@ -1,0 +1,29 @@
+{
+  "name": "gameoflife",
+  "version": "1.0.0",
+  "description": "Thanks for downloading this theme!",
+  "main": "copy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pollylam1/Lam-s-Page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pollylam1/Lam-s-Page/issues"
+  },
+  "homepage": "https://github.com/pollylam1/Lam-s-Page#readme",
+  "dependencies": {
+    "@types/node": "^18.8.4",
+    "express": "^4.18.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14"
+  }
+}
