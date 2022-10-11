@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Game Of Life_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Game Of Life_files/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Game Of Life_files/game.css">
+
+    <title>Game Of Life</title>
+  </head>
+
+  <body>
+    <div class="row container">
+<!--heading-->
+<div id="top" class="row">
+      <div class="row ">
+        <div class="col-12 "><h1 class="heading">Game of Life</h1></div>
+      </div>
+<!--control-->
+      <div class="row">
+        <div class="col-12  control">
+
+          <div class="left col-md-4">
+            <div class="dropend">
+              <button class="mainbtn classic">
+                Loneliness
+                <select name="lonely" id="lonely" class="dropdown-item mainbtn">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </button>
+            </div>
+
+            <div class="dropend">
+              <button class="mainbtn classic">
+                Overpopulation
+                <select name="over" id="over" class="dropdown-item mainbtn">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </button>
+            </div>
+
+            <div class="dropend">
+              <button class="mainbtn classic">
+                Reproduction
+                <select name="repo" id="repo" class="dropdown-item mainbtn">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </button>
+            </div>
+
+            <div>
+              <input id="slide" type="range" name="slide" max="10" min="0" placeholder="speed" style="background-color: #000">
+            </div>
+
+        </div>
+
+        <div class="right col-md-8 media1">
+          <div>
+            <button id="pause" class="mainbtn">
+              <i class="bi bi-pause-fill"></i>
+            </button>
+          </div>
+
+          <div>
+            <button id="start" class="s2 startgame mainbtn">
+              <i class="bi bi-play-circle-fill"></i>
+            </button>
+          </div>
+
+          <div><button id="reset-game" class="mainbtn">Reset</button></div>
+
+          <div><button id="random" class="mainbtn">Random</button></div>
+
+          <div><button id="plus" class="mainbtn">+</button></div>
+
+          <div><button id="minus" class="mainbtn">-</button></div>
+
+          <div class="dropend">
+            <button class="mainbtn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pattern
+            </button>
+            <ul class="dropdown-menu mainbtn">
+              <li>
+                <a class="dot dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Dot</a>
+              </li>
+              <li>
+                <a class="mirror dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Mirror</a>
+              </li>
+              <li><a class="gun dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Gun</a></li>
+              <li>
+                <a class="pulsar dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Pulsar</a>
+              </li>
+              <li>
+                <a class="living dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Living Forever</a>
+              </li>
+              <li>
+                <a class="turtle dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Turtle</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="dropend">
+            <button class="mainbtn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Style
+            </button>
+            <ul class="dropdown-menu mainbtn">
+              <li>
+                <a id="bw" class="dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Black and White</a>
+              </li>
+              <li>
+                <a id="rc" class="dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Random Color</a>
+              </li>
+              <li>
+                <a id="ma" class="dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Macaron</a>
+              </li>
+              <li>
+                <a id="de" class="dropdown-item mainbtn" href="file:///Users/lam/Desktop/tecky_new/WEF/gameOfLife/game.html#">Default</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+<!--canvas-->
+    <div class="row">
+      <div class="col-12">
+    <div id="canvas" class="canvas_center click"><div>
+    </div><canvas id="defaultCanvas0" class="p5Canvas" width="1527" height="245" style="width: 1527px; height: 245px;"></canvas></div>
+
+<!--container-->
+    </div>
+    <!--p5.js-->
+    <script src="./Game Of Life_files/p5.js"></script>
+
+    <script src="./Game Of Life_files/game.js"></script>
+    <!-- <script src="./game.js"></script> -->
+
+    <script src="./Game Of Life_files/bootstrap.bundle.min.js"></script>
+  
+
+</div></div><main></main></body></html>

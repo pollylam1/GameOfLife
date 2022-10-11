@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./game.css" />
+
+  <title>Game Of Life</title>
+</head>
+
+<body>
+  <div class="popup">
+    <h2>Welcome</h2></i>
+    <p>Here's the <b>Rule</b> of Game of life.
+      <br>
+      <br>First, there are some random box on the table already.
+      <br>• If a box has life and it has less than 2 neighbors. It dies of loneliness.
+      <br>• If a box has life and it has more than 3 neighbors. It dies of overpopulation.
+      <br>• If a box has life and it has 2 to 3 neighbors. Nothing changes for this box.
+      <br>• If a box has no life and it has 3 neighbors, the box in next generation fills with life because of
+      reproduction.
+      <br>
+      <br>＊ You may <b>change the rules</b>.
+      <br>＊ You may <b>reset the table, change the color by pen, color mode and pattern of new life.</b>
+      <br>＊ There will be <b>color change when the life in different status</b>, try to find out how it's change!
+    </p>
+    <a id="close" href="#">Let's Start</a>
+  </div>
+
+  </div>
+  <div class="row container">
+    <!--heading-->
+    <div id="top" class="row">
+      <div class="row ">
+        <div class="col-12 " id="heading">
+          <div style="position: relative;">
+            <h1 class="heading">Game of Life</h1>
+            <div id="popup" style="position: absolute;right:0px">
+              <h2>Welcome</h2></i>
+              <p>Here's the <b>Rule</b> of Game of life
+                <br>
+                <br>First, there are some random box on
+                <br>• If a box has life and it has less
+                <br>• If a box has life and it has more
+                <br>• If a box has life and it has 2 to
+                <br>• If a box has no life and it has 3
+                <br>
+                <br>＊ You may <b>change the rules</b>.
+                <br>＊ You may <b>reset the table, chan
+                  <br>＊ There will be <b>color change wh
+                    <a id="close" href="#">Let's Start</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--control-->
+      <div class="row">
+        <div class="col-12  control">
+
+          <div class="left col-lg-4">
+            <div class="dropend">
+              <button class="mainbtn classic button_slide slideRight">
+                Lonelinessx`
+                <select name="lonely" id="lonely" class="dropdown-item">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </button>
+            </div>
+
+            <div class="dropend">
+              <button class="mainbtn classic button_slide slideRight">
+                Overpopulation
+                <select name="over" id="over" class="dropdown-item">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </button>
+            </div>
+
+            <div class="dropend">
+              <button class="mainbtn classic button_slide slideRight">
+                Reproduction
+                <select name="repo" id="repo" class="dropdown-item">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </button>
+            </div>
+
+
+
+
+          </div>
+
+          <div class="right col-lg-8 media1">
+            <div>
+              <button id="pause" class="mainbtn button_slide slideRight">
+                <i class="bi bi-pause-fill"></i>
+              </button>
+            </div>
+
+            <div>
+              <button id="start" class="s2 startgame mainbtn button_slide slideRight">
+                <i class="bi bi-play-circle-fill"></i>
+              </button>
+            </div>
+
+            <div><button id="plus" class="mainbtn button_slide slideRight">+</button></div>
+            <div><button id="minus" class="mainbtn button_slide slideRight">-</button></div>
+
+            <div><button id="reset-game" class="mainbtn button_slide slideRight">Reset</button></div>
+
+            <div><button id="random" class="mainbtn button_slide slideRight">Random</button></div>
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="control2 warpleft col-12">
+
+          <div class="control3 ps col-lg-6 left">
+
+            <div><button class="mainbtn r2btn button_slide slideRight rw">Pen Color:&nbsp<input id="penColor"
+                  type="color"></button></div>
+            <div><button id="rainbow" class="mainbtn r2btn button_slide slideRight">Rainbow</button></div>
+            <div class="dropdown">
+              <button class=" mainbtn r2btn dropdown-toggle button_slide slideRight" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Pattern
+              </button>
+              <ul class="dropdown-menu mainbtn">
+                <li>
+                  <a class="dot dropdown-item ddbg" href="#">Dot</a>
+                </li>
+                <li>
+                  <a class="mirror dropdown-item ddbg" href="#">Mirror</a>
+                </li>
+                <li><a class="gun dropdown-item ddbg" href="#">Gun</a></li>
+                <li>
+                  <a class="pulsar dropdown-item ddbg" href="#">Pulsar</a>
+                </li>
+                <li>
+                  <a class="living dropdown-item ddbg" href="#">Living Forever</a>
+                </li>
+                <li>
+                  <a class="turtle dropdown-item ddbg" href="#">Turtle</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button class="mainbtn r2btn dropdown-toggle button_slide slideRight" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">Style
+              </button>
+              <ul class="dropdown-menu mainbtn">
+                <li>
+                  <a id="spring" class="dropdown-item ddbg" href="#">Spring</a>
+                </li>
+                <li>
+                  <a id="summer" class="dropdown-item  ddbg" href="#">Summer</a>
+                </li>
+                <li>
+                  <a id="autumn" class="dropdown-item ddbg" href="#">Autumn</a>
+                </li>
+                <li>
+                  <a id="winter" class="dropdown-item ddbg" href="#">Winter</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="control3 col-lg-6 right">
+            <div class="slide">Speed:&nbsp&nbsp</div>
+            <div class="slide">
+              <input id="slide" type="range" name="slide" max="10" min="0" placeholder="speed"
+                style="background-color: #000" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--canvas-->
+    <div class="row">
+      <div class="col-12">
+        <div id="canvas" class="canvas_center click">
+          <div>
+          </div>
+        </div>
+
+        <!--container-->
+      </div>
+    </div>
+    <!--p5.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+
+    <!--<script src="game.js"></script>-->
+    <!-- <script src="./game.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>

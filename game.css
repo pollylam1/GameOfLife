@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+.popup {
+  background-color: white;
+  width: 500px;
+  padding: 30px 40px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  border: 10px;
+  color: rgb(49, 80, 180);
+  display: none;
+  z-index: 30;
+}
+
+.popup .button {
+  display: block;
+  margin: 0 0 20px auto;
+  background-color: transparent;
+  font-size: px;
+  color: rgb(49, 80, 180);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.popup p {
+  font-size: 14px;
+  text-align: justify;
+  margin: 20px 0;
+}
+.popup a {
+  display: block;
+  width: 150px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  background-color: #282b2f;
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+body {
+  padding-left: 140px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  padding-right: 140px;
+  position: fixed;
+  overflow: hidden;
+  background-image: url("./img/bg003.jpg");
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  text-shadow: -2px -3px 10px rgba(53, 65, 138, 0.992);
+  font-size: 50px;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+/*  background: linear-gradient(
+  45deg,
+  rgb(249, 205, 192),
+  rgb(249, 205, 192),
+  rgb(212, 231, 181),
+  rgb(212, 231, 181),
+  rgb(180, 204, 237),
+  rgb(180, 204, 237),
+  letterSpacing(220, 199, 209),
+  rgb(220, 199, 209)
+);
+*/
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.row > * {
+  padding-right: 0px;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media (max-width: 994px) {
+  .control {
+    justify-content: flex-start;
+    margin-bottom: 0px !important;
+  }
+  .right .mainbtn {
+    margin-left: 0px !important;
+    margin-right: 15px;
+    align-items: center !important;
+  }
+  .left .mainbtn {
+    margin-bottom: 0px !important;
+  }
+  .control2 {
+    justify-content: flex-start;
+  }
+  .warpleft {
+    flex-wrap: wrap;
+  }
+  .control3 {
+    margin-left: 0px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+  }
+}
+
+.slide {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 130px;
+  height: 50px;
+}
+
+.control2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.control3 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.r2btn {
+  height: 37px;
+}
+
+.rw {
+  width: 172px;
+}
+
+.right {
+  height: 46.5px;
+  display: flex;
+
+  align-items: flex-end;
+}
+
+.ps {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.mainbtn {
+  background-color: rgb(115, 165, 210, 70%);
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.left .mainbtn {
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+
+.right .mainbtn {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.dropend {
+  border: 2px;
+}
+
+.ddbg {
+  background-color: rgb(115, 165, 210);
+  border: 2px;
+  color: white;
+}
+
+.button_slide {
+  color: white;
+  border-radius: 5px;
+  border: 0px;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: "Lucida Console", Monaco, monospace;
+  cursor: pointer;
+  background-color: rgba(115, 165, 210);
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slideRight:hover {
+  color: rgb(49, 80, 180);
+  box-shadow: inset 400px 0 0 0 white;
+  border: 2px 2px 2px 2px rgba(115, 165, 210);
+}
+
+.slide {
+  font-family: "Lucida Console", Monaco, monospace;
+  color: rgb(31, 54, 130);
+}
+
+#popup {
+  display: none;
+  background-color: aquamarine;
+  z-index: 2;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+h1.heading:hover + #popup {
+  display: block;
+}
