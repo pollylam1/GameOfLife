@@ -1,0 +1,22 @@
+name: deployment
+
+on:
+  push:
+    branches:
+      - "*"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ssh to pull latest version
+        uses: fifsky/ssh-actions@master
+        with:
+          command: |
+            cd Lam-s-Page/
+            git pull
+            forever restart 0
+          host: travel-planner.me
+          user: ubuntu
+          key: ${{secrets.SSH_PRIVATE_KEY}}

@@ -1,12 +1,10 @@
-import express, { application } from "express";
+import express from "express";
 import path from "path";
 let app = express();
 
 app.get("/", (req, res) => {
   res.sendFile(path.resolve("./index.html"));
 });
-
-app.use(express.static("css"));
 app.use(express.static("js"));
 app.use(express.static("img"));
 app.use(express.static("fonts"));
