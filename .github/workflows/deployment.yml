@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ssh to pull latest version
-        uses: fifsky/ssh-actions@master
+        uses: fifsky/ssh-action@master
         with:
           command: |
             cd Lam-s-Page/
